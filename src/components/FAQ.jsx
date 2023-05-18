@@ -42,9 +42,9 @@ export function FAQ() {
                     </dt>
                     <Disclosure.Panel as="dd" className="mt-2 pr-12">
                       <p className="text-base leading-7 text-gray-300">Yes! Help with DAOs is probably our most common request, 
-                      and we're happy to get your project rolling. We may start off with a consultation period to help you explore 
+                      and we&apos;re happy to get your project rolling. We may start off with a consultation period to help you explore 
                       and identify the best tools and technologies to use for your organization.
-                      In the meantime, check out our <a target="_blank" href="https://app.guavatech.io/">Web3 Tool Explorer</a> app to 
+                      In the meantime, check out our <a target="_blank" rel="noreferrer" href="https://app.guavatech.io/">Web3 Tool Explorer</a> app to 
                       get you started.</p>
                     </Disclosure.Panel>
                   </>
@@ -66,7 +66,7 @@ export function FAQ() {
                       </Disclosure.Button>
                     </dt>
                     <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                      <p className="text-base leading-7 text-gray-300">Every project is different, so please drop us a message and we'll get you an estimate ASAP. The more detail you can provide, the more quickly we can get back to you!</p>
+                      <p className="text-base leading-7 text-gray-300">Every project is different, so please drop us a message and we&apos;ll get you an estimate ASAP. The more detail you can provide, the more quickly we can get back to you!</p>
                     </Disclosure.Panel>
                   </>
                 )}

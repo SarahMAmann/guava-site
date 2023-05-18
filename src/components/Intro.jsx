@@ -79,7 +79,7 @@ export function IntroFooter() {
   return (
     <p className="flex items-baseline gap-x-2 text-[0.8125rem]/6 text-gray-500">
       {/* Give us a follow{' '} */}
-      <IconLink href="https://twitter.com/guavatech_io" target="_blank" icon={TwitterIcon} compact large>
+      <IconLink href="https://twitter.com/guavatech_io" target="_blank" rel="noreferrer" icon={TwitterIcon} compact large>
         Follow Us
       </IconLink>
       <IconLink href="#" icon={GitHubIcon} className="flex-none">

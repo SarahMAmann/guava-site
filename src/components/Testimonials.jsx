@@ -33,7 +33,7 @@ export function Testimonials() {
               <figure className="mt-10 flex flex-auto flex-col justify-between">
                 <blockquote className="text-lg leading-8 text-white">
                   <p>
-                    “The team is extremely knowledgeable - it's obvious they live and breathe Web3. 
+                    “The team is extremely knowledgeable - it&apos;s obvious they live and breathe Web3. 
                     If you have any, ANY, ideas that might need some Web3 tech, they are the ones to talk to. 
                     Thank you so much for the time and wisdom!”
                   </p>
