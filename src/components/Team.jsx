@@ -9,11 +9,20 @@ const people = [
         '/aaron1.jpg',
     },
     {
-        name: 'Sarah Benson',
-        role: 'Co-Founder',
-        imageUrl:'/sarah.jpg'
-      },
-    // More people...
+      name: 'Sarah Benson',
+      role: 'Co-Founder',
+      imageUrl:'/sarah.jpg'
+    },
+    {
+      name: 'Mars',
+      role: 'Mascot',
+      imageUrl:'/mars.jpg'
+    },
+    {
+      name: 'Sally',
+      role: 'Chief Canine Officer',
+      imageUrl:'/sally.jpg'
+    },
   ]
   
   export function Team() {
@@ -22,7 +31,7 @@ const people = [
         <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-10 px-6 lg:px-8 xl:grid-cols-2">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl flex">
-              <SparkleIcon className="h-7 w-7 pr-2"/>Core Team</h2>
+              <SparkleIcon className="h-7 w-7 pr-2"/>Core team</h2>
             {/* <p className="mt-6 text-lg leading-8 text-gray-600">
               Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper
               suspendisse.
