@@ -1,14 +1,10 @@
 import { SparkleIcon } from '@/components/SparkleIcon'
-import { generateRssFeed } from '@/lib/generateRssFeed'
 import { Team } from '@/components/Team'
 import { Testimonials } from '@/components/Testimonials'
 import { FAQ } from '@/components/FAQ'
 import { Projects } from '@/components/Projects'
 
 export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
-  }
   return { props: {} }
 }
 
