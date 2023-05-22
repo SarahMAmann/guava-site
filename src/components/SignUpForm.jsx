@@ -1,45 +1,39 @@
-import { useId } from 'react'
-
-import { Button } from '@/components/Button'
+import React, { useState } from "react";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { Button } from '@/components/Button';
 
 export function SignUpForm() {
-  let id = useId()
+
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm();
+  const [successMessage, setSuccessMessage] = useState("");
+  const [emailInputValue, setEmailInputValue] = useState("");
+  const [messageInputValue, setMessageInputValue] = useState("");
+  
+  function onSubmit(data) {
+    axios
+      .post("https://eor6oxgitmbxn1m.m.pipedream.net", data)
+      .then((response) => {
+        setSuccessMessage(
+          `Thanks for reaching out! Check your inbox for updates 😊`
+        );
+        setEmailInputValue("");
+        setMessageInputValue("");
+      })
+      .catch((e) => console.error(e));
+  }
 
   return (
-    // <form className="relative isolate mt-8 flex flex-col items-center pr-1">
-    //   <label htmlFor={id} className="sr-only">
-    //     Email address
-    //   </label>
-    //   <input
-    //     required
-    //     type="email"
-    //     autoComplete="email"
-    //     name="email"
-    //     id={id}
-    //     placeholder="Email address"
-    //     className="peer w-0 flex-auto  px-4 py-2.5 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-[0.8125rem]/6"
-    //   />
-    //   <label htmlFor={1} className="sr-only">
-    //     message
-    //   </label>
-    //   <input
-    //     required
-    //     type="text"
-    //     autoComplete=""
-    //     name="message"
-    //     id={1}
-    //     placeholder="Message"
-    //     className="peer w-0 flex-auto s px-4 py-2.5 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-[0.8125rem]/6"
-    //   />
-    //   <Button type="submit" arrow>
-    //     Say hello
-    //   </Button>
-    //   {/* <div className="absolute inset-0 -z-10 rounded-lg transition peer-focus:ring-4 peer-focus:ring-sky-300/15" />
-    //   <div className="absolute inset-0 -z-10 rounded-lg bg-white/2.5 ring-1 ring-white/15 transition peer-focus:ring-sky-300" /> */}
-    // </form>
-    <form className="flex flex-col items-center mt-10 ">
+    <form className="flex flex-col items-center mt-10" onSubmit={handleSubmit(onSubmit)}>
       <div className="pb-5">
         <input
+          {...register("email")}
+          value={emailInputValue}
+          onChange={(e) => setEmailInputValue(e.target.value)}
           required
           type="email"
           name="email"
@@ -49,6 +43,9 @@ export function SignUpForm() {
       </div>
       <div className='pb-5'>
         <textarea
+          {...register("message")}
+          value={messageInputValue}
+          onChange={(e) => setMessageInputValue(e.target.value)}
           required
           type="text"
           name="message"
@@ -57,9 +54,10 @@ export function SignUpForm() {
         >
         </textarea>
       </div>
-      <Button type="submit" arrow className="w-1/4">
+      <Button type="submit" role="submit" arrow className="w-1/4">
         Say hello
       </Button>
+      {successMessage && <p className="mt-5">{successMessage}</p>}
     </form>
   )
 }
